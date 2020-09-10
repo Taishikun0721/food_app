@@ -20,7 +20,8 @@ module FoodApp
       g.stylesheets false
       g.javascripts false
       g.helper false
-      g.test_framework :rspec, view_spec: false, helper_spec: false, routing_spec: false
+      g.skip_routes true
+      g.test_framework :rspec, view_specs: false, helper_specs: false, routing_specs: false
       g.template_engin :slim
     end
   end
