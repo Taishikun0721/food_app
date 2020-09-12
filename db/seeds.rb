@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+def names
+  %w( breakfast lunch dinner )
+end
+
+def create_data
+  names.each { |name| Category.create!(name: name) }
+end
+
+create_data
+# カテゴリーデータを作成。カテゴリは最初から決まっているのでseedファイルを使用
