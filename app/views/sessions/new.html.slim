@@ -1,2 +1,14 @@
-h1 Sessions#new
-p Find me in app/views/sessions/new.html.slim
+h3.mt-5 Welcome
+= form_with scope: :session, local: true do |f|
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fas.fa-envelope
+    = f.email_field :email, class: 'form-control', placeholder: 'email', id: 'session_email'
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fa.fa-key
+    = f.password_field :password, class: 'form-control', placeholder: 'password', id: 'session_password'
+  = f.submit 'Login', class: 'btn btn-default text-white mt-5'
+
