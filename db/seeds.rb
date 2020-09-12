@@ -15,3 +15,4 @@ def create_data
 end
 
 create_data
+# カテゴリーデータを作成。カテゴリは最初から決まっているのでseedファイルを使用
