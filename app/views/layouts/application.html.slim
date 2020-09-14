@@ -8,8 +8,8 @@ html
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   body
-    app.title.navbar.navbar-expand-md.navbar-light.bg-default.font-family
-      navbar.navbar-brand.h3.text-white.ml-5.mr-5#title Food Share application
+    app.title.navbar.navbar-expand-md.bg-default.font-family
+      navbar.h3.ml-5.mr-5#title= link_to 'Food Share application', root_path
       ul.navbar.nav.ml-auto.bg-default
         -if current_user
           li.nav-item= link_to 'All Foods', foods_path, class: 'nav-link'
@@ -19,4 +19,6 @@ html
           /   li.nav-item= link_to 'Profile', profile_path, class: 'nav-link'
           li.nav-item= link_to 'LogOut', logout_path, method: :delete, class: 'nav-link'
     .ml-5.mr-5
+      - if flash.notice.present?
+        .alert.alert-primary.text-black= flash.notice
       = yield

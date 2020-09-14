@@ -1,2 +1,5 @@
-h1 Foods#new
-p Find me in app/views/foods/new.html.slim
+h1 Create What You Eat
+
+= render partial: 'form', locals: { food: @food, categories: @categories }
+
+
