@@ -1,0 +1,157 @@
+/*------------------------------------
+- COLOR default
+------------------------------------*/
+
+$default_t1: #ae9970;
+$default_t2: #967f54;
+$default_t3: #e7e0d4;
+$default_t4: #f0ece5;
+$default_t5: #68593b;
+$default_t6: #8c774f;
+$default_t7: #9f885a;
+$default_t8: #473d28;
+$default_t9: #f7f5f2;
+
+$default_shadow: rgba(174, 153, 112, 0.5);
+$default_text_color_dark_bright: #212529;
+
+
+.alert-default {
+  color: $default_t5;
+  background-color: $default_t9;
+  border-color: $default_t4;
+}
+
+.alert-default hr {
+  border-top-color: $default_t3;
+}
+
+.alert-default .alert-link {
+  color: $default_t8;
+}
+
+.badge-default {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t1;
+}
+
+.badge-default[href]:hover, .badge-default[href]:focus {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t2;
+}
+
+.bg-default {
+  background-color: $default_t1 !important;
+}
+
+a.bg-default:hover, a.bg-default:focus,
+button.bg-default:hover,
+button.bg-default:focus {
+  background-color: $default_t2 !important;
+}
+
+.border-default {
+  border-color: $default_t1 !important;
+}
+
+.btn-default {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t1;
+  border-color: $default_t1;
+}
+
+.btn-default:hover {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t7;
+  border-color: $default_t2;
+}
+
+.btn-default:focus, .btn-default.focus {
+  box-shadow: 0 0 0 0.2rem $default_shadow;
+}
+
+.btn-default.disabled, .btn-default:disabled {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t1;
+  border-color: $default_t1;
+}
+
+.btn-default:not(:disabled):not(.disabled):active, .btn-default:not(:disabled):not(.disabled).active, .show > .btn-default.dropdown-toggle {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t2;
+  border-color: $default_t6;
+}
+
+.btn-default:not(:disabled):not(.disabled):active:focus, .btn-default:not(:disabled):not(.disabled).active:focus, .show > .btn-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem $default_shadow;
+}
+
+.btn-outline-default {
+  color: $default_t1;
+  background-color: transparent;
+  border-color: $default_t1;
+}
+
+.btn-outline-default:hover {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t1;
+  border-color: $default_t1;
+}
+
+.btn-outline-default:focus, .btn-outline-default.focus {
+  box-shadow: 0 0 0 0.2rem $default_shadow;
+}
+
+.btn-outline-default.disabled, .btn-outline-default:disabled {
+  color: $default_t1;
+  background-color: transparent;
+}
+
+.btn-outline-default:not(:disabled):not(.disabled):active, .btn-outline-default:not(:disabled):not(.disabled).active, .show > .btn-outline-default.dropdown-toggle {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t1;
+  border-color: $default_t1;
+}
+
+.btn-outline-default:not(:disabled):not(.disabled):active:focus, .btn-outline-default:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-default.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem $default_shadow;
+}
+
+.list-group-item-default {
+  color: $default_t5;
+  background-color: $default_t4;
+}
+
+.list-group-item-default.list-group-item-action:hover, .list-group-item-default.list-group-item-action:focus {
+  color: $default_t5;
+  background-color: $default_t3;
+}
+
+.list-group-item-default.list-group-item-action.active {
+  color: $default_text_color_dark_bright;
+  background-color: $default_t5;
+  border-color: $default_t5;
+}
+
+.table-default,
+.table-default > th,
+.table-default > td {
+  background-color: $default_t4;
+}
+
+.table-hover .table-default:hover {
+  background-color: $default_t3;
+}
+
+.table-hover .table-default:hover > td,
+.table-hover .table-default:hover > th {
+  background-color: $default_t3;
+}
+
+.text-default {
+  color: $default_t1 !important;
+}
+
+a.text-default:hover, a.text-default:focus {
+  color: $default_t2 !important;
+}
