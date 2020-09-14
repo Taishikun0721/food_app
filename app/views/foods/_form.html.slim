@@ -1,0 +1,25 @@
+- if food.errors.present?
+  ul#error_explanation
+    - food.errors.full_messages.each do |message|
+      li= message
+= form_with model: food, local: true do |f|
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fas.fa-info
+    = f.text_area :description, class: 'form-control', placeholder: 'description', id: 'foods_description'
+  - unless food.persisted?
+    .input-group
+      .input-group-prepend
+        .input-group-text
+          i.fas.fa-images
+      = f.file_field :image, class: 'form-control'
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fas.fa-hand-pointer
+    = f.collection_select :category_id, categories, :id, :name, { id: 'inputState' }, { class: 'form-control' }
+  - if food.persisted?
+    = f.submit 'Update Your Post', class: 'btn btn-default text-white mt-5 btn-round'
+  -else
+    = f.submit 'Create Your Post', class: 'btn btn-default text-white mt-5 btn-round'
