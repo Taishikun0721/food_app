@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :food do
-    description { 'MyText' }
-    user { nil }
-    category { nil }
+    description { 'This is my text' }
+    user
+    category
   end
 end
