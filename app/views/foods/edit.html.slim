@@ -1,2 +1,3 @@
-h1 Foods#edit
-p Find me in app/views/foods/edit.html.slim
+h1 Update What You Eat
+
+= render partial: 'form', locals: {food: @food, categories: @categories}

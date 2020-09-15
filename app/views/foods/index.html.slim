@@ -1,2 +1,15 @@
-h1 Foods#index
-p Find me in app/views/foods/index.html.slim
+
+= link_to 'New Post', new_food_path, class: 'btn btn-default text-white mt-5 btn-round'
+
+- @foods.each do |food|
+  .mb-5
+  .card#card style=("max-width: 80%")
+    .row.no-gutters
+      .col-md-4.my-auto
+        = image_tag food.image, class: 'card-img '
+      .col-md-8
+        .card-header
+        = link_to food.category.name, food.category.name, class: 'btn ml-3'
+        .card-body
+          p= food.description
+          = link_to 'Detail', food, class: 'btn btn-default text-white btn-round'

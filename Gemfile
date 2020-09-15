@@ -21,6 +21,7 @@ gem 'html2slim'
 gem 'slim-rails'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'bootstrap', '~> 4.3.1'
+gem 'data-confirm-modal'
 gem 'jquery-rails'
 # フロントエンド用にslimとbootstrapとfont-awesomeを導入
 
@@ -34,7 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -7,5 +7,11 @@
 
 #title {
   font-family: 'title';
-  font-size: 20px;
+  font-size: 25px;
+}
+
+#error_explanation {
+  border: 1px solid red;
+  color: whitesmoke;
+  background: #FF3636;
 }

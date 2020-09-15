@@ -1,2 +1,17 @@
-h1 Foods#show
-p Find me in app/views/foods/show.html.slim
+.row
+  .col-lg-12
+h1 Detail
+.mb-5
+  .card#card style=("max-width: 50rem;")
+    .row.no-gutters
+      .my-auto
+        = image_tag @food.image, class: 'card-img '
+      .col-md-12
+        .card-header style=("padding: 20;")
+          p.pl-3= @food.category.name
+        .card-body
+          p= @food.description
+          p= @food.created_at
+          p= @food.updated_at
+          = link_to 'Edit', edit_food_path(@food), class: 'btn btn-default text-white btn-round mr-3'
+          = link_to 'Delete', @food, method: :delete, data: { confirm: 'Are you sure want to delete?' }, class: 'btn btn-default text-white btn-round'

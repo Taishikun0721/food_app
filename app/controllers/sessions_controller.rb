@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: session_params[:email])
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'ログインが成功しました。'
+      redirect_to root_path, notice: 'ログインしました。'
     else
-      render :new, alert: 'ログインできませんでした。もう一度入力やり直して下さい。'
+      flash.now[:notice] = 'ログインできませんでした。もう一度入力やり直して下さい。'
+      render :new
     end
   end
 
