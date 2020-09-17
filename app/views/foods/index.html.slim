@@ -9,7 +9,7 @@
         = image_tag food.image, class: 'card-img '
       .col-md-8
         .card-header
-        = link_to food.category.name, food.category.name, class: 'btn ml-3'
+        = link_to food.category.name, category_path(food.category), class: 'btn ml-3'
         .card-body
           p= food.description
           = link_to 'Detail', food, class: 'btn btn-default text-white btn-round'
