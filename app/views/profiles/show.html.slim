@@ -1,2 +1,25 @@
-h1 Profiles#show
-p Find me in app/views/profiles/show.html.slim
+table.table.table_hover
+  tbody
+    tr
+      th= User.human_attribute_name(:id)
+      td= current_user.id
+    tr
+      th= User.human_attribute_name(:nickname)
+      td= current_user.nickname
+    tr
+      th= User.human_attribute_name(:email)
+      td= current_user.email
+    tr
+      th= User.human_attribute_name(:admin)
+      td= current_user.admin? ? 'あり' : 'なし'
+    tr
+      th= User.human_attribute_name(:created_at)
+      td= current_user.created_at
+    tr
+      th= User.human_attribute_name(:updated_at)
+      td= current_user.updated_at
+    tr
+      th= User.human_attribute_name('Post count')
+      td= "#{current_user.foods.count}件"
+
+= link_to 'Edit', edit_profile_path(current_user), class: 'btn btn-default text-white btn-round'
