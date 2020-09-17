@@ -11,5 +11,4 @@ class Food < ApplicationRecord
   def image_required
     errors.add(:image, '画像を添付して下さい。') unless image.attached?
   end
-
 end

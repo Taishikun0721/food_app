@@ -1,2 +1,28 @@
-h1 Admin::Users#new
-p Find me in app/views/admin/users/new.html.slim
+h1 Create New User
+
+- if @user.errors.present?
+  ul#error_explanation
+    - @user.errors.full_messages.each do |message|
+      li= message
+= form_with model: [:admin, @user], local: true do |f|
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fa.fa-user[aria-hidden="true"]
+    = f.text_field :nickname, class: 'form-control', placeholder: 'Nickname', id: 'user_nickname'
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fas.fa-envelope
+    = f.email_field :email, class: 'form-control', placeholder: 'Email', id: 'user_email'
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fa.fa-key
+    = f.password_field :password, class: 'form-control', placeholder: 'Password', id: 'user_password'
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fa.fa-key
+    = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation', id: 'user_password_confirmation'
+  = f.submit 'Create New User', class: 'btn btn-default text-white mt-5 btn-round'

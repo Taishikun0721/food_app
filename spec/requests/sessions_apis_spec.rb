@@ -14,18 +14,5 @@ RSpec.describe 'SessionsApis', type: :request do
       delete logout_path
       expect(response).to redirect_to login_path
     end
-
-    context 'when admin user' do
-      it 'works to profile_path' do
-        get profile_path
-        expect(response).to have_http_status '200'
-      end
-    end
-
-
-    context 'when not admin user' do
-
-    end
-
   end
 end
