@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
   resource :profile, only: [:show, :edit, :update]
 
+  resources :categories, only: [:show]
+
   resources :comments, only: [:new, :create, :edit, :update, :destroy], shallow: true
 
   get '/login', to: 'sessions#new'
