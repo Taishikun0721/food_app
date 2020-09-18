@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :foods, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_secure_password
 
   validates :nickname, presence: true, length: { maximum: 15 }
