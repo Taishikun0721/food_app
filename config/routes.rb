@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'foods#index'
-  resources :foods
+  resources :foods do
+    resources :comments, only: [:new, :create, :edit, :update, :destroy], shallow: true
+  end
 
   namespace :admin do
     resources :users, only: [:index, :new, :create, :destroy]
@@ -9,7 +11,6 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
 
-  resources :comments, only: [:new, :create, :edit, :update, :destroy], shallow: true
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

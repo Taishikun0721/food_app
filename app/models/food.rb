@@ -1,6 +1,7 @@
 class Food < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  has_many :comments, dependent: :destroy
   has_one_attached :image
 
   validates :description, presence: true, length: { maximum: 100 }

@@ -1,0 +1,11 @@
+- if comment.errors.present?
+  ul#error_explanation
+    - comment.errors.full_messages.each do |message|
+      li= message
+= form_with model: [food, comment], remote: true do |f|
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fas.fa-comment
+    = f.text_area :body, class: 'form-control', placeholder: 'Comment', id: 'comment_body'
+  = f.submit 'Create Comment', class: 'btn btn-default text-white mt-5 btn-round'

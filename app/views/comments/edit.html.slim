@@ -1,2 +1,12 @@
-h1 Comments#edit
-p Find me in app/views/comments/edit.html.slim
+h1 Update Your Comment
+- if @comment.errors.present?
+  ul#error_explanation
+    - @comment.errors.full_messages.each do |message|
+      li= message
+= form_with model: @comment, local: true do |f|
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        i.fas.fa-comment
+    = f.text_area :body, class: 'form-control', placeholder: 'Comment', id: 'comment_body'
+  = f.submit 'Update Comment', class: 'btn btn-default text-white mt-5 btn-round'

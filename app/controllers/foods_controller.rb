@@ -1,7 +1,6 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:edit, :update, :destroy]
   before_action :set_categories, only: [:new, :create, :edit, :update]
-  helper_method :owner?
 
   def index
     @foods = Food.with_attached_image.includes(:category)
@@ -9,6 +8,8 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
+    @comment = Comment.new
+    @comments = @food.comments
   end
 
   def new
@@ -53,10 +54,5 @@ class FoodsController < ApplicationController
 
   def set_categories
     @categories = Category.all
-  end
-
-  def owner?
-    @food = Food.find(params[:id])
-    @food.user == User.find_by(id: current_user&.id) if current_user
   end
 end
