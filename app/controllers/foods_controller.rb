@@ -3,13 +3,13 @@ class FoodsController < ApplicationController
   before_action :set_categories, only: [:new, :create, :edit, :update]
 
   def index
-    @foods = Food.with_attached_image.includes(:category)
+    @foods = Food.with_attached_image.includes(:category).page(params[:page]).recent
   end
 
   def show
     @food = Food.find(params[:id])
     @comment = Comment.new
-    @comments = @food.comments
+    @comments = @food.comments.page(params[:page]).recent
   end
 
   def new
