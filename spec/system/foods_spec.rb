@@ -74,7 +74,11 @@ describe 'about foods function', type: :system do
         fill_in 'foods_description', with: ''
         select 'lunch', from: 'food_category_id'
         find('.btn.btn-default.text-white.mt-5.btn-round').click
-        expect(page).to have_content "Description can't be blank"
+        if I18n.locale == :en
+          expect(page).to have_content "Description can't be blank"
+        else
+          expect(page).to have_content 'Descriptionを入力してください'
+        end
       end
     end
   end
