@@ -1,6 +1,6 @@
 .row
   .col-lg-12
-h1 Detail
+h1#strong Detail
 .mb-5
   .card#card style=("max-width: 50rem;")
     .row.no-gutters
@@ -8,16 +8,17 @@ h1 Detail
         = image_tag @food.image, class: 'card-img '
       .col-md-12
         .card-header style=("padding: 20;")
-          p.pl-3= @food.category.name
+          p.pl-3= link_to @food.category.name, @food.category, class: 'btn'
         .card-body
-          p= @food.description
-          p= @food.created_at
-          p= @food.updated_at
+          h4= @food.description
+          p= "投稿日時: #{@food.created_at}"
+          p= "更新日時: #{@food.updated_at}"
           - if owner?(@food)
             = link_to 'Edit', edit_food_path(@food), class: 'btn btn-default text-white btn-round mr-3'
             = link_to 'Delete', @food, method: :delete, data: { confirm: 'Are you sure want to delete?' }, class: 'btn btn-default text-white btn-round'
 
 = render 'comments/form', { food: @food, comment: @comment }
-h2.mt-5 Comment
+h2.mt-5#strong
+  | Comment
 #comment-group
   = render partial: 'comments/comment', collection: @comments
