@@ -26,7 +26,7 @@ gem 'jquery-rails'
 # フロントエンド用にslimとbootstrapとfont-awesomeを導入
 gem 'kaminari'
 # ページネーションを追加
-
+gem 'rails-i18n'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
