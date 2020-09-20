@@ -21,4 +21,7 @@ h1#strong Detail
 h2.mt-5#strong
   | Comment
 #comment-group
+  = paginate @comments
+  = page_entries_info @comments
   = render partial: 'comments/comment', collection: @comments
+  = paginate @comments
