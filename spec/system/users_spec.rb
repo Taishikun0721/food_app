@@ -51,7 +51,11 @@ describe 'about users function', type: :system do
         fill_in 'user_password_confirmation', with: 'password'
         find('.btn.btn-default.text-white.mt-5.btn-round').click
         expect(page).to have_content 'Create New User'
-        expect(page).to have_content "Password confirmation doesn't match Password"
+        if I18n.locale == :en
+          expect(page).to have_content "Password confirmation doesn't match Password"
+        else
+          expect(page).to have_content 'Password confirmationとPasswordの入力が一致しません'
+        end
       end
     end
 

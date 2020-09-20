@@ -18,7 +18,11 @@ RSpec.describe Comment, type: :model do
       it 'is not allowed without body' do
         comment.body = nil
         comment.valid?
-        expect(comment.errors[:body]).to include "can't be blank"
+        if I18n.locale == :en
+          expect(comment.errors[:body]).to include "can't be blank"
+        else
+          expect(comment.errors[:body]).to include "を入力してください"
+        end
       end
     end
   end

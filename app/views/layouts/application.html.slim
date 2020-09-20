@@ -5,6 +5,7 @@ html
       | FoodApp
     = csrf_meta_tags
     = csp_meta_tag
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   body
@@ -21,6 +22,7 @@ html
         - else
           li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
     .ml-5.mr-5
-      - if flash.notice.present?
-        .alert.alert-primary.text-black= flash.notice
-      = yield
+      .container
+        - if flash.notice.present?
+          .alert.alert-primary.text-black= flash.notice
+        = yield

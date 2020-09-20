@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def owner?(some_object)
-    current_user == some_object.user
+    current_user == some_object.user if current_user
   end
 end
