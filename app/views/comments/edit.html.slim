@@ -1,4 +1,7 @@
-h1 Update Your Comment
+h1#strong
+  | Update Your
+  span
+    |  Comment
 - if @comment.errors.present?
   ul#error_explanation
     - @comment.errors.full_messages.each do |message|
