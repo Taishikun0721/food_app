@@ -1,1 +1,65 @@
 inherit_from: .rubocop_todo.yml
+
+
+#元々あるファイルなどは、対象外と言うことにする
+AllCops:
+  TargetRubyVersion: 2.5.1
+  TargetRailsVersion: 5.2.4
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'node_modules/**/*'
+    - 'lib/tasks/auto_annotate_models.rake'
+
+#クラスのコメント必須を無視
+Documentation:
+  Enabled: false
+
+# 日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+# 20 行超えるのはmigration ファイル以外許可しない
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - "db/migrate/*.rb"
+
+# Offense count: 1
+# Cop supports --auto-correct.
+#ブロックコメントを使うのはやめる
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: MinSize.
+# SupportedStyles: percent, brackets
+#原則％記法を使用しなければいけない。
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+# Offense count: 4
+# Cop supports --auto-correct.
+Layout/CommentIndentation:
+  Exclude:
+    - 'Gemfile'
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# Offense count: 39
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: always, always_true, never
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+#ブロックあたりの行数が長くなるのを許可する
+Metrics/BlockLength:
+  Enabled: false
+
