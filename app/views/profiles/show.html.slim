@@ -24,7 +24,7 @@ table.table.table_hover
       th= User.human_attribute_name(:updated_at)
       td= current_user.updated_at
     tr
-      th= User.human_attribute_name('Post count')
+      th= User.human_attribute_name('Posts count')
       td= "#{current_user.foods.count}件"
 
 = link_to 'Edit', edit_profile_path(current_user), class: 'btn btn-default text-white btn-round'
