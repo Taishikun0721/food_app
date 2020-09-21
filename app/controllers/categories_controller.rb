@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: :show
+  skip_before_action :login_required
 
   def show
     @categories_foods = @category.foods

@@ -1,5 +1,7 @@
 class Admin::UsersController < ApplicationController
   before_action :set_user, only: :destroy
+  before_action :admin_required
+
   def index
     @users = User.where(admin: false)
   end
@@ -30,5 +32,9 @@ class Admin::UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def admin_required
+    redirect_to foods_path, notice: '権限がありません。' unless current_user.admin?
   end
 end

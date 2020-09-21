@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:edit, :update, :destroy]
   before_action :set_categories, only: [:new, :create, :edit, :update]
+  skip_before_action :login_required, only: :index
 
   def index
     @foods = Food.with_attached_image.includes(:category).page(params[:page]).recent
