@@ -60,7 +60,7 @@ describe 'about users function', type: :system do
     end
 
     context 'as not admin' do
-      xit 'cant create user' do
+      xit 'cant create user (on the way)' do
       end
     end
   end
@@ -68,7 +68,7 @@ describe 'about users function', type: :system do
 
   describe '#destroy' do
     context 'as admin' do
-      xit 'successfully delete user' do
+      xit 'successfully delete user (on the way)' do
         sign_in(unauthenticated_user)
         create_food(unauthenticated_user, :test1)
         create_food(unauthenticated_user, :test2)
