@@ -2,10 +2,10 @@
   .col-lg-12
 h1#strong Detail
 .mb-5
-  .card#card style=("max-width: 50rem;")
+  .card#card style=("max-width: 600px;")
     .row.no-gutters
       .my-auto
-        = image_tag @food.image, class: 'card-img '
+        = image_tag @food.image.variant(combine_options:{gravity: :center, resize: "600x^", crop:"600x600+0+0", auto_orient: true}).processed, class: 'card-img '
       .col-md-12
         .card-header style=("padding: 20;")
           p.pl-3= link_to @food.category.name, @food.category, class: 'btn'

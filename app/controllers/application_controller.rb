@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :owner?
+  before_action :login_required
 
   private
 
@@ -10,5 +11,9 @@ class ApplicationController < ActionController::Base
 
   def owner?(some_object)
     current_user == some_object.user if current_user
+  end
+
+  def login_required
+    redirect_to login_path, notice: 'ログインが必要です。' unless current_user
   end
 end
