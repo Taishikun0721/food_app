@@ -7,7 +7,7 @@ h1#strong
   .card#card style=("max-width: 80%")
     .row.no-gutters
       .col-md-4.my-auto
-        = image_tag food.image, class: 'card-img '
+        = image_tag food.image.variant(combine_options:{gravity: :center, resize: "200x^", crop:"300x300+0+0", auto_orient: true}).processed, class: 'card-img '
       .col-md-8
         .card-header
         = link_to food.category.name, category_path(food.category), class: 'btn ml-3'
