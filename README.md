@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリ概要
 
-Things you may want to cover:
+食べ物を画像付でシェアできるアプリ。
 
-* Ruby version
+## 機能またエンドポイント表
 
-* System dependencies
+[endpoint.md](https://github.com/Taishikun0721/food_app/blob/develop/memo/endpoint.md)
 
-* Configuration
+## アクセス権限管理表
+[manegement_authority.md](https://github.com/Taishikun0721/food_app/blob/develop/memo/manegement_authority.md)
 
-* Database creation
 
-* Database initialization
+## 実装中に意識したところ
 
-* How to run the test suite
+1. 見やすいUIにする。
+2. テストを書く
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
