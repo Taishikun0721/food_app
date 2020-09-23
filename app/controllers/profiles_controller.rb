@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: [:edit, :update]
+
   def show
 
   end

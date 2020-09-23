@@ -39,7 +39,7 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food.destroy
+    @food.destroy!
     redirect_to foods_path, notice: '投稿を削除しました'
   end
 

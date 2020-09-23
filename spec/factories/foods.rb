@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :food do
-    description { 'This is my text' }
+    sequence (:description) { |t| "This is my text #{t}" }
     user
     category
   end
