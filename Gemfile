@@ -41,6 +41,7 @@ gem 'image_processing', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'aws-sdk-s3', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
