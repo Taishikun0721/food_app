@@ -12,7 +12,7 @@ RSpec.describe Comment, type: :model do
   describe 'validation test' do
     context 'as owner' do
       before do
-        food_a.image = fixture_file_upload('spec/factories/images/after.png')
+        food_a.image = fixture_file_upload('spec/factories/images/image.png')
       end
 
       it 'is not allowed without body' do
