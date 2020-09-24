@@ -5,7 +5,8 @@ h1#strong
 
 = link_to "New User", new_admin_user_path, class: 'btn btn-default text-white btn-round'
 
-.mb-3
+
+.mb-3.table-responsive-sm
   table.table.table-hover
     thead.thead-default
       tr
@@ -21,7 +22,7 @@ h1#strong
           td= user.nickname
           td= user.email
           td= user.admin? ? 'あり' : 'なし'
-          td= user.created_at
-          td= user.updated_at
+          td= l user.created_at
+          td= l user.updated_at
           td
             =link_to '削除', admin_user_path(user), method: :delete, data: { confirm: "ユーザー#{user.nickname}を削除します。本当によろしいですか？" }, class: 'btn btn-default text-white btn-round'
