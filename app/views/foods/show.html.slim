@@ -11,8 +11,8 @@ h1#strong Detail
           p.pl-3= link_to @food.category.name, @food.category, class: 'btn'
         .card-body
           h4= @food.description
-          p= "投稿日時: #{@food.created_at}"
-          p= "更新日時: #{@food.updated_at}"
+          p= "投稿日時: #{l @food.created_at}"
+          p= "更新日時: #{l @food.updated_at}"
           - if owner?(@food)
             = link_to 'Edit', edit_food_path(@food), class: 'btn btn-default text-white btn-round mr-3'
             = link_to 'Delete', @food, method: :delete, data: { confirm: 'Are you sure want to delete?' }, class: 'btn btn-default text-white btn-round'
