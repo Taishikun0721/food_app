@@ -9,7 +9,7 @@ RSpec.describe Food, type: :model do
 
     context 'with image' do
       before do
-        food_a.image = fixture_file_upload('spec/factories/images/after.png')
+        food_a.image = fixture_file_upload('spec/factories/images/image.png')
       end
 
       it 'be able to make valid data' do
@@ -20,8 +20,19 @@ RSpec.describe Food, type: :model do
 
     context 'without image' do
       it 'invalid without image' do
-        food_a.tap(&:save).valid?
+        food_a.valid?
         expect(food_a.errors[:image]).to include '画像を添付して下さい。'
+      end
+    end
+
+    context 'with not image' do
+      before do
+        food_a.image = fixture_file_upload('spec/factories/images/not_image.pdf')
+      end
+
+      it 'is invalid with not image' do
+        food_a.valid?
+        expect(food_a.errors[:image]).to include '画像以外は添付できません。'
       end
     end
   end

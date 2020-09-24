@@ -2,7 +2,7 @@ module CreateFoodSupport
   def create_food(user, description)
     click_link 'New Post'
     fill_in 'foods_description', with: description
-    image_example = File.join(Rails.root, 'spec/factories/images/after.png')
+    image_example = File.join(Rails.root, 'spec/factories/images/image.png')
     attach_file 'food_image', image_example, make_visible: true
     select 'lunch', from: 'food_category_id'
     expect {
