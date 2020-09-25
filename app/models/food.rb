@@ -15,13 +15,13 @@ class Food < ApplicationRecord
   end
 
   def unpermitted_extension
-    if image.attached? && !image?
+    if image.attached? && !permitted_extension?
       image.purge
       errors.add(:image, '画像以外は添付できません。')
     end
   end
 
-  def image?
+  def permitted_extension?
     %w[image/jpg image/jpeg image/gif image/png].include?(image.blob.content_type) if image.attached?
   end
 end
