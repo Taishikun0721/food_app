@@ -16,7 +16,6 @@ class Food < ApplicationRecord
 
   def unpermitted_extension
     if image.attached? && !permitted_extension?
-      image.purge
       errors.add(:image, '画像以外は添付できません。')
     end
   end
