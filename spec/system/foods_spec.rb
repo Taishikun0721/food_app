@@ -3,9 +3,9 @@ require 'rails_helper'
 describe 'about foods function', type: :system do
   let(:user_a) { create(:user) }
   let(:user_b) { create(:user, email: 'test1@example.com') }
-  let!(:category_breakfast) { create(:category, name: 'breakfast') }
-  let!(:category_lunch) { create(:category, name: 'lunch') }
-  let!(:category_dinner) { create(:category, name: 'dinner') }
+  let!(:category_breakfast) { create(:category) }
+  let!(:category_lunch) { create(:category, :lunch) }
+  let!(:category_dinner) { create(:category, :dinner) }
 
   describe '#Link' do
     context 'authenticated user' do

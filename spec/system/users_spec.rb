@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe 'about users function', type: :system do
-  let(:authenticated_user) { create(:user, email: 'test1@example.com', admin: true) }
+  let(:authenticated_user) { create(:user, :admin) }
   let(:unauthenticated_user) { create(:user) }
-  let!(:category_breakfast) { create(:category, name: 'breakfast') }
-  let!(:category_lunch) { create(:category, name: 'lunch') }
-  let!(:category_dinner) { create(:category, name: 'dinner') }
+  let!(:category_breakfast) { create(:category) }
+  let!(:category_lunch) { create(:category, :lunch) }
+  let!(:category_dinner) { create(:category, :dinner) }
 
   describe '#link' do
     context 'as admin' do
