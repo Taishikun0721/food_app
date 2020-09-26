@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def owner?(some_object)
-    current_user == some_object.user if current_user
+    current_user.id == some_object.user_id if current_user
   end
 
   def login_required
