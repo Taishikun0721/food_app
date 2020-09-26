@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   let(:user_a) { create(:user) }
   let(:user_b) { create(:user, email: 'test1@example.com') }
-  let!(:category_breakfast) { create(:category, name: 'breakfast') }
-  let!(:category_lunch) { create(:category, name: 'lunch') }
-  let!(:category_dinner) { create(:category, name: 'dinner') }
-  let(:food_a) { build(:food) }
+  let!(:category_breakfast) { create(:category) }
+  let!(:category_lunch) { create(:category, :lunch) }
+  let!(:category_dinner) { create(:category, :dinner) }
+  let(:food_a) { build(:food, category: category_breakfast) }
   let(:comment) { create(:comment, food: food_a, user: user_a) }
 
   describe 'validation test' do
