@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user_a) { FactoryBot.create(:user) }
+  let(:user_a) { create(:user) }
 
   describe 'method test' do
     it 'is successfully created' do

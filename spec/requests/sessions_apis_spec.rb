@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'SessionsApis', type: :request do
-  let(:test_user) { FactoryBot.create(:user) }
-  let(:session_params) { FactoryBot.attributes_for( :user) }
-  let(:session_attribute) { FactoryBot.attributes_for(:user) }
+  let(:test_user) { create(:user) }
+  let(:session_params) { attributes_for( :user) }
+  let(:session_attribute) { attributes_for(:user) }
   describe 'GET /sessions/new' do
     it 'works to new_sessions_path' do
       get login_path

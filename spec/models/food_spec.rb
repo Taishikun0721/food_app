@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  let(:user_a) { FactoryBot.create(:user) }
-  let(:category_a) { FactoryBot.create(:category) }
-  let(:food_a) { FactoryBot.build(:food, user: user_a, category: category_a) }
+  let(:user_a) { create(:user) }
+  let(:category_a) { create(:category) }
+  let(:food_a) { build(:food, user: user_a, category: category_a) }
 
   describe 'validation test' do
 

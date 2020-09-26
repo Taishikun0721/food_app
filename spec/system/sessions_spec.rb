@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'about sessions function', type: :system do
-  let(:user_a) { FactoryBot.create(:user) }
+  let(:user_a) { create(:user) }
 
   describe '#login' do
     it 'successfully login' do
