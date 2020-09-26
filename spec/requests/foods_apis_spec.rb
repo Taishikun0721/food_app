@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "FoodsApis", type: :request do
 
-  let(:user_a) { FactoryBot.create(:user) }
-  let(:category_a) { FactoryBot.create(:category) }
-  let(:food_a) { FactoryBot.build(:food) }
+  let(:user_a) { create(:user) }
+  let(:category_a) { create(:category) }
+  let(:food_a) { build(:food) }
 
   describe '#index' do
     context 'as authenticated user' do

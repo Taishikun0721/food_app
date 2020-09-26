@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'UsersApis', type: :request do
-  let(:user_a) { FactoryBot.create(:user) }
+  let(:user_a) { create(:user) }
+
   describe 'GET /admin/users' do
     context 'is an authenticated user' do
       xit 'works to admin_users_path (on the way)' do
