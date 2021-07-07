@@ -1,0 +1,10 @@
+app.title.navbar.navbar-expand-md.bg-default.font-family
+  navbar.h3.ml-5.mr-5#title= link_to 'Food Share application', root_path
+  ul.navbar.nav.ml-auto.bg-default.mr-5
+    li.nav-item.dropdown
+      a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
+        |  Menu
+      .dropdown-menu[aria-labelledby="navbarDropdown"]
+        = link_to 'All Foods', foods_path, class: 'dropdown-item'
+        = link_to 'LogIn', login_path, class: 'dropdown-item'
+.ml-5.mr-5

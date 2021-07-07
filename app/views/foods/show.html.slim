@@ -1,16 +1,14 @@
-.row
-  .col-lg-12
 h1#strong Detail
 .mb-5
-  .card#card style=("max-width: 600px;")
+  .card#card style=("max-width: 500px;")
     .row.no-gutters
       .my-auto
-        = image_tag @food.image.variant(combine_options:{gravity: :center, resize: "600x^", crop:"600x600+0+0", auto_orient: true}).processed, class: 'card-img '
+        = image_tag @food.image.variant(combine_options:{gravity: :center, resize: "500x^", crop:"600x600+0+0", auto_orient: true}).processed, class: 'card-img '
       .col-md-12
         .card-header style=("padding: 20;")
           p.pl-3= link_to @food.category.name, @food.category, class: 'btn'
+          h4.pl-4= @food.description
         .card-body
-          h4= @food.description
           p= "投稿日時: #{l @food.created_at}"
           p= "更新日時: #{l @food.updated_at}"
           - if owner?(@food)
@@ -22,6 +20,5 @@ h2.mt-5#strong
   | Comment
 #comment-group
   = paginate @comments
-  = page_entries_info @comments
   = render partial: 'comments/comment', collection: @comments
   = paginate @comments
